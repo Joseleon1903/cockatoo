@@ -12,10 +12,6 @@ Notes to be aware of:
 
 dev: aplication with security disable
 
-## Work flow api 
-url : https://whimsical.com/6z7PQEsY97U6gmMvLoDU3X
-![alt text](https://github.com/Joseleon1903/Cockatoo/blob/cockatoo-develop/documentation/Cockatoo%20Work%20Flow.png)
-
 ##  api version [/cockatoo/version] [GET]
 
 Returns the version of the api
