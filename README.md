@@ -181,8 +181,8 @@ If everything went ok it should return a list of player.
 
 ##  Get device resume [/cockatoo/api/device/information/get] [GET]
 
-Get information of player 
-If everything went ok it should return a list of player.
+Get information of device information 
+If everything went ok it should return a list of device information.
 
 
   + Headers
