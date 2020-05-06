@@ -178,3 +178,54 @@ If everything went ok it should return a list of player.
                 "levelStatusDTOList": null
             }
         ]
+
+##  Get device resume [/cockatoo/api/device/information/get] [GET]
+
+Get information of device information 
+If everything went ok it should return a list of device information.
+
+
+  + Headers
+
+            Authorization: Basic eyJhbGciOiJIUzI1NiJ9
+
++ Response 200 (application/json)
+
+  + Body
+
+        [
+            {
+                "id": 1,
+                "deviceName": "Test 1",
+                "displayOrientation": "Landscape",
+                "height": 1080,
+                "width": 720
+            },
+            {
+                "id": 2,
+                "deviceName": "Test",
+                "displayOrientation": "Landscape",
+                "height": 1080,
+                "width": 720
+            }
+        ]
+##  update api device information display [/cockatoo/api/device/information/update] [POST]
+
+Update device information
+If everything went ok it should return a http status ok (200) with the payload.
+
++ Body
+
+       {
+       	"height": 1080,
+       	"width": 720,
+       	"deviceName": "Test",
+       	"displayOrientation": "Landscape"
+       }
+
+  + Headers
+
+            Authorization: Basic eyJhbGciOiJIUzI1NiJ9
+
++ Response 200 (application/json)
++ 
