@@ -209,6 +209,7 @@ If everything went ok it should return a list of device information.
                 "width": 720
             }
         ]
+        
 ##  update api device information display [/cockatoo/api/device/information/update] [POST]
 
 Update device information
@@ -229,3 +230,59 @@ If everything went ok it should return a http status ok (200) with the payload.
 
 + Response 200 (application/json)
 + 
+
+##  save api bubble smash player best score [/cockatoo/bubble/smash/api/save/player/score] [POST]
+
+save player best score
+If everything went ok it should return a http status ok (200) with the payload.
+
++ Body
+
+       {
+       	
+       	"playerName": "player test",
+       	"playerScore": 6350,
+       	"playerScoreDate": "5/21/2020"
+       }
+
+  + Headers
+
+            Authorization: Basic eyJhbGciOiJIUzI1NiJ9
+
++ Response 200 (application/json)
++ 
+
+##  Get player best score top 10 resume [/cockatoo/bubble/smash/api/get/player/top/score] [GET]
+
+Get player best score in top 10 
+If everything went ok it should return a list of device information.
+
+
+  + Headers
+
+            Authorization: Basic eyJhbGciOiJIUzI1NiJ9
+
++ Response 200 (application/json)
+
+  + Body
+
+        [
+            {
+                "id": 3,
+                "playerName": "player test 1",
+                "playerScore": 6350,
+                "playerScoreDate": "playerScoreDate"
+            },
+            {
+                "id": 2,
+                "playerName": "player test 2",
+                "playerScore": 6300,
+                "playerScoreDate": "playerScoreDate"
+            },
+            {
+                "id": 1,
+                "playerName": "player test 3",
+                "playerScore": 6000,
+                "playerScoreDate": "playerScoreDate"
+            }
+        ]
