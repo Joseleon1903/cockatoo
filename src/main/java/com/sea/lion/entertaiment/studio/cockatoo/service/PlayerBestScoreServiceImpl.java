@@ -2,10 +2,8 @@ package com.sea.lion.entertaiment.studio.cockatoo.service;
 
 import com.sea.lion.entertaiment.studio.cockatoo.domain.PlayerBestScore;
 import com.sea.lion.entertaiment.studio.cockatoo.repository.JpaPlayerBestScoreRepository;
-import lombok.experimental.var;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
