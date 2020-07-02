@@ -12,6 +12,8 @@ public interface JpaPlayerBestScoreRepository extends CrudRepository<PlayerBestS
 
     PlayerBestScore findByPlayerName(String playerName);
 
+    PlayerBestScore findByPlayerScore(int score);
+
     @Query(value = "SELECT p FROM PlayerBestScore  p order by playerScore DESC ")
     List<PlayerBestScore> getOrderByPlayerScore();
 
