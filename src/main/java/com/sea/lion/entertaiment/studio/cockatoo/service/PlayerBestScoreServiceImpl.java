@@ -26,26 +26,18 @@ public class PlayerBestScoreServiceImpl implements PlayerBestScoreService {
     public void registerPlayerBestCore(PlayerBestScore playerBestScore) {
         logger.debug("Entering in method registerPlayerBestCore");
         logger.debug("Entering param: "+playerBestScore);
-        Iterable<PlayerBestScore> bestScore = jpaPlayerBestScoreRepository.findAll();
 
-        boolean isValidNewScore = true;
+        PlayerBestScore bestScoreN = jpaPlayerBestScoreRepository.findByPlayerName(playerBestScore.getPlayerName());
 
-        for(PlayerBestScore score : bestScore){
+        PlayerBestScore bestScoreS = jpaPlayerBestScoreRepository.findByPlayerScore(playerBestScore.getPlayerScore());
 
-            if(score.getPlayerScore() >= playerBestScore.getPlayerScore()) {
-
-                isValidNewScore = false;
-            }
+        if(bestScoreN == null  && bestScoreS == null){
+            jpaPlayerBestScoreRepository.save(playerBestScore);
         }
 
-        if(isValidNewScore){
-            PlayerBestScore player = jpaPlayerBestScoreRepository.findByPlayerName(playerBestScore.getPlayerName());
-            if(player != null){
-                player.setPlayerScore(playerBestScore.getPlayerScore());
-                jpaPlayerBestScoreRepository.save(player);
-            }else{
-                jpaPlayerBestScoreRepository.save(playerBestScore);
-            }
+        if(bestScoreN != null  && bestScoreS == null){
+            bestScoreN.setPlayerScore(playerBestScore.getPlayerScore());
+            jpaPlayerBestScoreRepository.save(bestScoreN);
         }
     }
 
